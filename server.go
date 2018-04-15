@@ -71,7 +71,7 @@ func main() {
 	{
 		api.GET("/test", echoString)
 		// api.GET("/get_quote", getQuoteReq)
-		api.POST("/quote", echoString)
+		api.POST("/quote", handleQuoteReq)
 	}
 
 	log.Fatal(router.Run(":4444"))
