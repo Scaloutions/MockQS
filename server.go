@@ -55,6 +55,9 @@ func handleQuoteReq(c *gin.Context) {
 	req := getParams(c)
 	quote := getQuote(req.Stock)
 	//randomly wait
+	sleepT := rand.Intn(5)
+	glog.Info("Sleeping for: ", sleepT)
+	time.Sleep(time.Duration(sleepT) * time.Second)
 
 	c.BindJSON(&quote)
 	c.IndentedJSON(http.StatusOK, quote)
